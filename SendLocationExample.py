@@ -7,7 +7,7 @@ LOGGING_MSG_EXP_REQUEST_EXCEPTION = "Request Exception"
 LOGGING_MSG_EXP_HTTP_ERROR = "HTTPError: "
 LOGGING_MSG_EXP_CONN_ERROR = "ConnectionError: "
 
-API_GATEWAY = "https://k2j1e9ygt0.execute-api.us-west-1.amazonaws.com/prod/storelocation"
+API_GATEWAY = "Place you API_GATEWAY URL HERE"
 
 PIXIE_BOARD_ID = 113
 
