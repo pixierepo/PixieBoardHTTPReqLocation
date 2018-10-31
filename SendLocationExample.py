@@ -1,4 +1,4 @@
-from PixieBoardGPSLocation import PixieBoardGPSLocation
+from PixieBoardGPSLocation.PixieBoardGPSLocation import PixieBoardGPSLocation
 import requests, json
 import time
 
