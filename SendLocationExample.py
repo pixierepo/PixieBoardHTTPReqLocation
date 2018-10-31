@@ -7,9 +7,9 @@ LOGGING_MSG_EXP_REQUEST_EXCEPTION = "Request Exception"
 LOGGING_MSG_EXP_HTTP_ERROR = "HTTPError: "
 LOGGING_MSG_EXP_CONN_ERROR = "ConnectionError: "
 
-API_GATEWAY = "Place you API_GATEWAY URL HERE"
+API_GATEWAY = "Place api url here"
 
-PIXIE_BOARD_ID = 113
+PIXIE_BOARD_ID = 13
 
 def SendLocation(pixieboard_id, lat, lng):
 	try:
@@ -35,18 +35,12 @@ def LocationLoop():
 	print(raw)
 	sessionStoped, raw, error = pxbdGPSLocation.StopSession()
 	print(raw)
-	if sessionStoped:
-		sessionStoped, raw, error = pxbdGPSLocation.ConfigureGPSTracking()
-		print(raw)
+	sessionStoped, raw, error = pxbdGPSLocation.ConfigureGPSTracking()
+	print(raw)
 	print("Get Location")
-	while True:
-		sessionStoped, raw, error = pxbdGPSLocation.GetGPSLocationPretty()
-		if sessionStoped:
-			SendLocation(PIXIE_BOARD_ID, pxbdGPSLocation.Latitude, pxbdGPSLocation.Longitude)
-			print("Location Sent")
-			break
-		else:
-			time.sleep(8)
-		
+	pxbdGPSLocation.WaitUntilGPSIsAvailablePretty()
+	SendLocation(PIXIE_BOARD_ID, pxbdGPSLocation.Latitude, pxbdGPSLocation.Longitude)
+	print("Location Sent")
+
 
 LocationLoop()
