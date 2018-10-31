@@ -1,0 +1,3 @@
+[submodule "PixieBoardGPSLocation"]
+	path = PixieBoardGPSLocation
+	url = https://github.com/pixierepo/PixieBoardGPSLocation.git
